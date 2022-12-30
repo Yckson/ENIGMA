@@ -33,15 +33,11 @@ const TelaDeLogin = {
     currentLoggedUser: [null, null],
 
     list_of_users: [
-        ["lstsh52tOCeuYuEFb9-H-Q", "MjrLMjSVJsNwaBI7QxYZ8w"], //violeta - energia | violeta - seu pai lhe procura
+        ["lstsh52tOCeuYuEFb9-H-Q", "MjrLMjSVJsNwaBI7QxYZ8w"],
+        ["z47ETL5CUBKpjasHtTQ-hg", "1THEKAYLH3RWiL3bDfEhJw"],
+        ["8qEjvx-LYjWD7Orjvwiq0Q", "U3p2gpLB4-mJz5_qY0uiYA"],
+        ["xXGrCndov5-Eqn_XN7Z3Ag", "lOP2go2Colm-e4xn1186Iw"],
 
-        ["z47ETL5CUBKpjasHtTQ-hg", "1THEKAYLH3RWiL3bDfEhJw"], //bento - morte | bento - a morte lhe deseja
-
-        ["FW9F-ivAypGuVtY8EpJSXA", "DTkzvXbkaLqgeLvTS9hSlg"], //bruno - energia | bruno - o caos lhe consome
-
-        ["xXGrCndov5-Eqn_XN7Z3Ag", "lOP2go2Colm-e4xn1186Iw"], //akin - conhecimento | akin - saber tudo...
-
-        ["1234", "1234567"]
     ],
 
     start: function (){
@@ -87,7 +83,6 @@ const TelaDeLogin = {
     login: async function(){
         let errorSpan = document.querySelector(`span#${this.error}`);
         let loadingBar = document.querySelector(`div#${this.loadingBar}`);
-        console.log(errorSpan)
         if (this.verifyUser()){
             hideContent(this.error);
             if (this.verifyPassword()){

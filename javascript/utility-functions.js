@@ -3,7 +3,6 @@ function playAudio(idAudio){
         stopAudio(mediaVariables.currentAudio);
     }
     let audio = document.querySelector(`audio#${idAudio}`);
-    console.log(audio);
     audio.play();
     mediaVariables.currentAudio = idAudio;
 
@@ -11,13 +10,11 @@ function playAudio(idAudio){
 
 function playAudioOver(idAudio){
     let audio = document.querySelector(`audio#${idAudio}`);
-    console.log(audio);
     audio.play();
 }
 
 function stopAudio(idAudio){
     let audio = document.querySelector(`audio#${idAudio}`);
-    audio.pause();
     audio.currentTime = 0;
     console.log(audio);
     mediaVariables.currentAudio = null;
