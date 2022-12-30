@@ -61,3 +61,31 @@ div#view02 div.innerProgressBar{
     padding: 5px;
     background-color: green;
 }
+
+div#view03{
+    width: 100%;
+    height: 85%;
+}
+
+div#view03 > video{
+    height: 100%;
+    width: 100%;
+}
+
+div#view04{
+    height: 100%;
+    width: 100%;
+}
+
+div#view04 span{
+    color: rgb(111, 17, 199);
+}
+
+div#view04 img{
+    width: 80%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
