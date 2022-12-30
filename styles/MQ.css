@@ -1,0 +1,8 @@
+button#iniciar:hover{
+    border: 1px solid white;
+}
+
+div#view02 > input:focus{
+    outline: none;
+    border-bottom: 1px solid rgb(0, 170, 0);
+}

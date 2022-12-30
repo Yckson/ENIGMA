@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteúdo Confidencial</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div id="interacao-inicial">
+        <span>INICIAR O SISTEMA?</span>
+        <button id="iniciar">SIM</button>
+    </div>
+    <div class="view hidden" id="view01">
+    </div>
+
+    <div class="view hidden" id="view02">
+        <label for="user">USUÁRIO:</label>
+        <input type="text" id="user">
+        <label for="pw">SENHA:</label>
+        <input type="password" id="pw">
+        <button id="login" class="hidden">INICIAR</button>
+        <span class="error hidden" id="error"></span>
+        <div class="progressBar hidden" id="progressBar">
+            <div class="innerProgressBar" id="innerProgressBar"></div>
+        </div>
+    </div>
+
+    <div class="view hidden" id="view03">
+        <video src="media/video/boot.mp4"></video>
+    </div>
+
+    <script src="javascript/main.js"></script>
+    <script src="javascript/objects.js"></script>
+    <script src="javascript/events.js"></script>
+    <script src="javascript/utility-functions.js"></script>
+
+    <audio src="media/audio/ambience.mp3" id="audio-ambience"></audio>
+    <audio src="media/audio/startingSYS.mp3" id="startingSYS"></audio>
+</body>
+</html>

@@ -1,0 +1,63 @@
+@import url('index.css');
+@import url('MQ.css');
+@import url('view01.css');
+
+
+
+.hidden{
+    display: none !important;
+}
+
+div.view{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    color: rgb(0, 170, 0);
+
+}
+
+div#view01{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+div#view02{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 100px;
+    border: 1px dashed rgb(0, 170, 0);
+}
+
+div#view02 > input{
+    background-color: transparent;
+    border: none;
+    margin-bottom: 5px;
+    padding: 2px;
+    color: yellow;
+}
+
+div#view02 > button{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 170, 0, 0.589);
+    cursor: pointer;
+    color: yellow;
+    padding: 5px;
+}
+
+div#view02 > span.error{
+    color: red;
+    text-align: center;
+    padding: 5px 0;
+}
+
+div#view02 div.innerProgressBar{
+    width: 0%;
+    margin: 0 auto;
+    margin-top: 5px;
+    padding: 5px;
+    background-color: green;
+}
