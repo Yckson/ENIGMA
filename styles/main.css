@@ -94,3 +94,12 @@ div#view04 img{
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
+div#view05{
+    height: 100%;
+    width: 100%;
+    background-image: url('../media/img/error.gif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

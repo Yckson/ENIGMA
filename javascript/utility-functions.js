@@ -1,27 +1,24 @@
-function playAudio(idAudio){
+function playAudio(audio){
     if (mediaVariables.currentAudio != null){
         stopAudio(mediaVariables.currentAudio);
     }
-    let audio = document.querySelector(`audio#${idAudio}`);
     audio.play();
-    mediaVariables.currentAudio = idAudio;
+    mediaVariables.currentAudio = audio;
 
 }
 
-function playAudioOver(idAudio){
-    let audio = document.querySelector(`audio#${idAudio}`);
+function playAudioOver(audio){
     audio.play();
 }
 
-function stopAudio(idAudio){
-    let audio = document.querySelector(`audio#${idAudio}`);
+function stopAudio(audio){
+    pauseAudio(audio);
     audio.currentTime = 0;
-    console.log(audio);
     mediaVariables.currentAudio = null;
 }
 
 function pauseAudio(){
-    let audio = document.querySelector(`audio#${mediaVariables.currentAudio}`);
+    let audio = mediaVariables.currentAudio;
     audio.pause();
 }
 

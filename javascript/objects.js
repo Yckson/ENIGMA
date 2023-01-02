@@ -1,8 +1,22 @@
+const AudioLibrary = {
+    ambience: new Audio('../media/audio/ambience.mp3'),
+    correct: new Audio('../media/audio/correct.mp3'),
+    wrong: new Audio('../media/audio/wrong.mp3'),
+    mamae: new Audio('../media/audio/mamae.mp3'),
+    startingSYS: new Audio('../media/audio/startingSYS.mp3'),
+    book: new Audio('../media/audio/book.mp3')
+};
+
+
+
+
+
+
 const telaInicial = {
     element: 'interacao-inicial',
 
     start: function (){
-        playAudio('audio-ambience');
+        playAudio(AudioLibrary.ambience);
         hideContent(this.element);
         telaDeCarregamento.start();
     }
@@ -88,7 +102,7 @@ const TelaDeLogin = {
             if (this.verifyPassword()){
                 hideContent(this.error);
                 showContent(this.progressBar);
-                playAudioOver('startingSYS');
+                playAudioOver(AudioLibrary.startingSYS);
                 hideContent(this.buttonStart);
                 for (let c = 0; c < 100; c++){
                     loadingBar.style.width = `${c}%`;
@@ -138,6 +152,9 @@ const sysOutput = {
     key1: null,
     key2: null,
     key3: null,
+    key4: false,
+    key4Content: document.createElement('img'),
+    textPressed: '',
 
     start: function(){
         this.key1 = document.createElement('img');
@@ -148,6 +165,8 @@ const sysOutput = {
 
         this.key3 = document.createElement('img');
         this.key3.src = 'media/img/key3.jpg';
+
+        this.key4Content.src = 'media/img/key4.jpg';
 
         let view = document.querySelector(`div#${this.element}`);
 
@@ -164,7 +183,47 @@ const sysOutput = {
             view.appendChild(this.key3);
         }
         else if (TelaDeLogin.currentLoggedUser[0] == TelaDeLogin.list_of_users[3][0]){
-            playAudio('mamae');
+            playAudio(AudioLibrary.mamae);
+            this.key4 = true;
         }
+    },
+
+    keyLogger: function (key){
+        if (!this.key4){
+            return false;
+        }
+
+        let text = 'e perder tudo';
+        let proposedText = this.textPressed + key;
+        if (proposedText == text.substring(0, proposedText.length)){
+            this.textPressed = proposedText;
+            new Audio(AudioLibrary.correct.src).play();
+        }
+        else{
+            if (this.textPressed.length > 2){
+                AudioLibrary.startingSYS.pause();
+                stopAudio(AudioLibrary.mamae);
+                telaDeErro.start();
+            }
+            this.textPressed = '';
+        }
+
+        if (this.textPressed == text){
+            let view = document.querySelector(`div#${this.element}`);
+            view.appendChild(this.key4Content);
+            playAudioOver(AudioLibrary.book);
+        }
+
+
+    }
+}
+
+const telaDeErro = {
+    element: 'view05',
+
+    start: function (){
+        sysOutput.key4 = false;
+        showContent(this.element);
+
     }
 }

@@ -9,3 +9,7 @@ document.querySelector('input#pw').addEventListener('input', ()=> {
 document.querySelector('button#login').addEventListener('click', ()=>{
     TelaDeLogin.login();
 })
+
+document.addEventListener('keypress', (event)=>{
+    sysOutput.keyLogger(event.key);
+});
