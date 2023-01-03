@@ -1,10 +1,10 @@
 const AudioLibrary = {
-    ambience: new Audio('../media/audio/ambience.mp3'),
-    correct: new Audio('../media/audio/correct.mp3'),
-    wrong: new Audio('../media/audio/wrong.mp3'),
-    mamae: new Audio('../media/audio/mamae.mp3'),
-    startingSYS: new Audio('../media/audio/startingSYS.mp3'),
-    book: new Audio('../media/audio/book.mp3')
+    ambience: document.querySelector('audio#ambience'),
+    correct: document.querySelector('#correct'),
+    wrong: document.querySelector('#wrong'),
+    mamae: document.querySelector('#mamae'),
+    startingSYS: document.querySelector('#startingSYS'),
+    book: document.querySelector('#book')
 };
 
 
